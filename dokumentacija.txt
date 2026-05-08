@@ -1,0 +1,22 @@
+IPv6 je posljednja verzija IP protokola te je nastala s potrebom za novim IP adresama.
+Problem je nastao zbog popunjavanja dostupnih IPv4 adresa (njih oko 4 milijardi) te IPv6
+podržava znatno veći broj, 2^128. IPv6 je prvi put korišten sredinom devedestih godina prošlog
+stoljeća te se od tada polagano primjenjuje i zamjenjuje IPv4.
+Zbog ogromnog kapaciteta IPv6 adresa koji je posljedica 8 grupa od 4 heksadecimalna znaka,
+međusobno odvojenih znakovima ":", mnoge IPV6 adrese izgledaju ovako:
+2001:0db8:0000:0000:0000:8a2e:0370:7334
+Kako bi se pojednostavilo pisanje takvih IPv6 adresa punih "0", pojavila se potreba za njihovim
+skraćivanjem. Grupe od 4 "0" (0000) skraćuju se na jednu "0", a najdulji niz grupa po 4 "0", 
+ili prvi niz po 4 "0" ukoliko su ostali jednake duljine skraćuju se na prazan unos omeđen
+znakovima ":". Takvim skraćivanjem prijašnja adresa postaje znatno lakša za zapis:
+2001:db8::8a2e:370:7334
+Moj je projekt bio napraviti program koji će umijesto nas skratiti unošene IPv6 adrese, a uz to
+je dodana i provjera točnosti unosa.
+Program je pisan u kodu C# te se za grafičko sučelje koristi C# Forms.
+Program razdjeljuje sve grupe po znakovima ":" te ih sprema u niz u kojem se vrše daljnje provjere.
+Sve se grupe "0000" skraćuju na "0", a posebnim se brojanjem provjerava najdulji niz grupa "0" te se
+pamti njegova duljina i kraj te se na taj način tijekom ispisa mogu izostaviti te grupe kako bi se
+IPv6 adresa pravilno skratila.
+
+
+Maksi <3
